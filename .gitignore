@@ -6,9 +6,13 @@ READ THIS BEFORE YOU REFACTOR ME
 # aten/build/ will stop being cleaned.  So be careful when
 # refactoring this file!
 
-##FlowGMM
+## FlowGMM
 
 *.npz
+
+## Jupyter
+
+.ipynb_checkpoints
 
 ## PyTorch
 
