@@ -26,7 +26,7 @@ class SSLGaussMixture(torch.distributions.Distribution):
 
 
     def parameters(self):
-       return [self.means, self.inv_cov_std, self.weights]
+       return [self.means, self.inv_cov_stds, self.weights]
         
     def sample(self, sample_shape, gaussian_id=None):
         if gaussian_id is not None:

@@ -8,7 +8,7 @@ from flow_ssl.data import NO_LABEL
 import sklearn
 from sklearn.metrics import confusion_matrix
 import matplotlib
-matplotlib.use('Agg')
+# matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
 

@@ -8,6 +8,7 @@ READ THIS BEFORE YOU REFACTOR ME
 
 ## FlowGMM
 
+venv
 *.npz
 
 ## Jupyter
