@@ -17,17 +17,24 @@ def make_circles_ssl():
     
     return data, labels
     
-def make_moons_ssl():
+def make_moons_ssl(noise_ip):
 
     np.random.seed(0)
     n_samples = 1000
-    data = datasets.make_moons(n_samples=n_samples, noise=.05, )[0].astype(np.float32)
-
+    data,y = datasets.make_moons(n_samples=n_samples, noise= noise_ip, )
+    data = data.astype(np.float32)
+    ln1 = np.argsort(data,axis=0)[-2][0]
+    ln2 = np.argsort(data,axis=0)[2][0]
+    yo1 = np.argsort(data, axis=0)[0:3][:,0]
+    yo2 = np.argsort(data, axis=0)[-3:][:,0]
     labels = np.ones((n_samples,)) * (-1)
-
-    idx1 = [0, 1, 3, 4, 5]#, 9, 11, 14, 16]
+    l1 = np.argmax(data,axis=0)[0]
+    l2 = np.argmin(data,axis=0)[0]
+    idx1 = [3]# 1,3, 4, 5]#, 9, 11, 14, 16]
+    idx1 = idx1 + yo2.tolist()
     labels[idx1] = 1
-    idx0 = [2, 6, 7, 10, 17]#, 19, 34, 13, 15]
+    idx0 = [2]#7, 2, 6, 7, 10, 17]#, 19, 34, 13, 15]
+    idx0 = idx0 + yo1.tolist()
     labels[idx0] = 0
 
     return data, labels
